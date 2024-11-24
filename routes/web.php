@@ -183,6 +183,8 @@ Route::get('/product/details/{id}/{product_name}', 'ProductController@ProductVie
 Route::post('/cart/product/add/{id}', 'ProductController@AddCart');
 
         //for subcategory productShowing
+Route::get('/products/all', 'ProductController@allProduct');
+
 Route::get('/products/{id}', 'ProductController@productsView');
         //---------Order Tracking----------
 Route::post('order/tracking', 'FrontController@OrderTracking')->name('order.tracking');
@@ -192,5 +194,4 @@ Route::get('user/view/order/{id}', 'FrontController@UserOrderView');
 Route::post('product/search', 'FrontController@ProductSearch')->name('product.search');
 
 //------------Customer profile related routes-----------
-
 

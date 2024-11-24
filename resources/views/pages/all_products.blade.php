@@ -27,12 +27,12 @@
                 <div class="shop_sidebar">
                     <div class="sidebar_section">
                         @php
-                            $category=DB::table('categories')->get();
+                            $subcategories=DB::table('subcategories')->get();
                         @endphp
                         <div class="sidebar_title">Categories</div>
                         <ul class="sidebar_categories">
-                            @foreach ($category as $cat)
-                                <li><a href="#">{{$cat->category_name}}</a></li>
+                            @foreach ($subcategories as $cat)
+                                <li><a href="{{ url('products/' . $cat->id) }}">{{$cat->subcategory_name}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -138,9 +138,7 @@
                     <!-- Shop Page Navigation -->
 
                     <div class="shop_page_nav d-flex flex-row">
-                        <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
                             {{ $products->links() }}     <!-------Used for Pagination------->
-                        <div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
                     </div>
 
                 </div>

@@ -70,6 +70,13 @@ class ProductController extends Controller
 
          return view('pages.all_products',compact('products','brands'));
     }
+    public function allProduct()
+    {
+         $products=DB::table('products')->paginate(10);
+         $brands= DB::table('products')->select('brand_id')->groupBy('brand_id')->get();
+
+         return view('pages.all_products',compact('products','brands'));
+    }
 
 
 }
