@@ -80,7 +80,7 @@
                                         @if(session()->get('lang') == 'bangla')
                                         <a href="{{ route('language.english') }}">English<i class="fas fa-chevron-down"></i></a>
                                         @else
-                                        <a href="#">Home<i class="fas fa-chevron-down"></i></a>
+                                        <a href="{{ url('products/all') }}">Products<i class="fas fa-chevron-down">Product</i></a>
                                         @endif
                                     </li>
                                     </ul>
